@@ -1,11 +1,18 @@
 class Controls{
-    constructor(){
+    constructor(type){
         this.forward = false;
         this.left = false;
         this.right= false;
         this.reverse = false;
-
-        this.#addKeyboardListeners(); //hastag is there becuase this is a private method and cannot bwe accessed from outside controls
+        
+        switch(type){
+            case "KEYS":
+                this.#addKeyboardListeners(); //hastag is there becuase this is a private method and cannot bwe accessed from outside controls
+                break;
+            case "DUMMY":
+                this.forward=true;
+                break;
+        }
 
 
     }
